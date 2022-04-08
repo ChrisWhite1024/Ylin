@@ -31,7 +31,6 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,px_int screen_width,px_int
 
 	PX_SoundPlayInitialize(&pApp->runtime.mp_game, &pApp->runtime.soundplay);
 	PX_AudioInitialize(&pApp->runtime.soundplay);
-	//PX_AudioSetVolume(50);
 	PX_SoundPlayClear(&pApp->runtime.soundplay);
 	PX_SoundStaticDataFree(&pApp->sounddata);
 	PX_LoadSoundFromFile(&pApp->runtime.mp_resources, &pApp->sounddata, GAME_SOUND_PATH_LOAD);
@@ -51,9 +50,9 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,px_int screen_width,px_int
 		return PX_FALSE;
 	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_MOUNTAIN02, "mountain02"))
 		return PX_FALSE;
-	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, "./res/partical/traw/partical01.traw", "partical01"))
+	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_PARTICAL01, "partical01"))
 		return PX_FALSE;
-	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, "./res/evaluation/traw/perfect.traw", "perfect"))
+	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_EVALUATION_PERFECT, "perfect"))
 		return PX_FALSE;
 
 	PX_WorldInitialize(&pApp->runtime.mp_game, &pApp->world, pApp->runtime.surface_width, pApp->runtime.surface_height, pApp->runtime.surface_width, pApp->runtime.surface_height, 1024 * 1024 * 4);

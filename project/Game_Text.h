@@ -9,6 +9,8 @@
 #define GAME_TEXTURE_PATH_CLOUD03 "./res/background/night/traw/cloud03.traw"
 #define GAME_TEXTURE_PATH_MOUNTAIN01 "./res/background/night/traw/mountain01.traw"
 #define GAME_TEXTURE_PATH_MOUNTAIN02 "./res/background/night/traw/mountain02.traw"
+#define GAME_TEXTURE_PATH_PARTICAL01 "./res/partical/traw/partical01.traw"
+#define GAME_TEXTURE_PATH_EVALUATION_PERFECT "./res/evaluation/traw/perfect.traw"
 
 #define GAME_SOUNDEFFECT_PATH_MOTION_ATTACK "./res/soundeffect/Motion/jump4.wav"
 

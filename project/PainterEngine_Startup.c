@@ -21,12 +21,7 @@ px_bool PX_ApplicationInitializeDefault(PX_Runtime *runtime, px_int screen_width
 
 	if(!PX_RuntimeInitialize(runtime,surface_width,surface_height,window_width,window_height,PX_ApplicationRuntime,sizeof(PX_ApplicationRuntime),PX_APPLICATION_MEMORYPOOL_UI_SIZE,PX_APPLICATION_MEMORYPOOL_RESOURCES_SIZE,PX_APPLICATION_MEMORYPOOL_GAME_SIZE))
 		return PX_FALSE;
-	
-	/*
-	if (!PX_RuntimeInitialize(runtime, 600, 400, 600, 400, PX_ApplicationRuntime, sizeof(PX_ApplicationRuntime), PX_APPLICATION_MEMORYPOOL_UI_SIZE, PX_APPLICATION_MEMORYPOOL_RESOURCES_SIZE, PX_APPLICATION_MEMORYPOOL_GAME_SIZE))
-		return PX_FALSE;
-	*/
-
+		
 	return PX_TRUE;
 }
 px_void PX_ApplicationEventDefault(PX_Runtime *runtime,PX_Object_Event e)
