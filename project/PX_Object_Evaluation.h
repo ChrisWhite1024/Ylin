@@ -13,5 +13,5 @@ typedef struct {
 	PX_ParticalLauncher launcher;
 }PX_Object_Evaluation;
 
-PX_Object* PX_Object_EvaluationCreate(PX_World* pWorld, PX_Runtime* pruntime, px_point point);
+PX_Object* PX_Object_EvaluationCreate(PX_World* pWorld, PX_Runtime* pruntime, px_point point, px_uint type);
 #endif // !PX_OBJECT_EVALUATION_H

@@ -11,8 +11,10 @@
 #define GAME_TEXTURE_PATH_MOUNTAIN02 "./res/background/night/traw/mountain02.traw"
 #define GAME_TEXTURE_PATH_PARTICAL01 "./res/partical/traw/partical01.traw"
 #define GAME_TEXTURE_PATH_EVALUATION_PERFECT "./res/evaluation/traw/perfect.traw"
+#define GAME_TEXTURE_PATH_EVALUATION_GOOD "./res/evaluation/traw/good.traw"
+#define GAME_TEXTURE_PATH_EVALUATION_MISS "./res/evaluation/traw/miss.traw"
 
-#define GAME_SOUNDEFFECT_PATH_MOTION_ATTACK "./res/soundeffect/Motion/jump4.wav"
+#define GAME_SOUNDEFFECT_PATH_MOTION_ATTACK "./res/soundeffect/Motion/Attack.wav"
 
 #define GAME_ANIMATIONLIBRARY_KEY_DRAGON "dragon"
 #define GAME_SOUND_KEY_LOAD "vocal"

@@ -24,10 +24,10 @@ px_void PX_Object_BeanRender(px_surface *psurface,PX_Object* pObject, px_dword e
 	switch (pBean->position)
 	{
 	case PX_OBJECT_FIREBALL_POSITION_TOP:
-		pObject->y = psurface->height / 8 + 65;
+		pObject->y = (px_float)psurface->height / 8 + 65;
 		break;
 	case PX_OBJECT_FIREBALL_POSITION_BOTTOM:
-		pObject->y = psurface->height / 8 * 5 + 65;
+		pObject->y = (px_float)psurface->height / 8 * 5 + 65;
 		break;
 	default:
 		break;
@@ -51,7 +51,7 @@ px_void PX_Object_Judge(PX_Object *pObject,PX_Object_Event e,px_void *ptr)
 				pBean->state = PX_OBJECT_BEAN_STATE_DEAD;
 				pObject->impact_object_type = 0;
 				PX_WorldAddObject(pBean->pWorld, PX_Object_ParticallauncherCreate(pBean->pWorld, pBean->pruntime, PX_POINT(pObject->x, pObject->y, pObject->z)));
-				PX_WorldAddObject(pBean->pWorld, PX_Object_EvaluationCreate(pBean->pWorld, pBean->pruntime, PX_POINT((px_float)pBean->pruntime->surface_height / 6 + 125, (px_float)pBean->pruntime->surface_height / 8 * 5 + 25, pObject->z)));
+				PX_WorldAddObject(pBean->pWorld, PX_Object_EvaluationCreate(pBean->pWorld, pBean->pruntime, PX_POINT((px_float)pBean->pruntime->surface_height / 6 + 125, (px_float)pBean->pruntime->surface_height / 8 * 5 + 25, pObject->z), 1));
 			}
 			break;
 		case DRAGON_LAND_TO_GROUND:
@@ -62,7 +62,7 @@ px_void PX_Object_Judge(PX_Object *pObject,PX_Object_Event e,px_void *ptr)
 				pBean->state = PX_OBJECT_BEAN_STATE_DEAD;
 				pObject->impact_object_type = 0;
 				PX_WorldAddObject(pBean->pWorld, PX_Object_ParticallauncherCreate(pBean->pWorld, pBean->pruntime, PX_POINT(pObject->x, pObject->y, pObject->z)));
-				PX_WorldAddObject(pBean->pWorld, PX_Object_EvaluationCreate(pBean->pWorld, pBean->pruntime, PX_POINT((px_float)pBean->pruntime->surface_height / 6 + 125, (px_float)pBean->pruntime->surface_height / 8 + 25, pObject->z)));
+				PX_WorldAddObject(pBean->pWorld, PX_Object_EvaluationCreate(pBean->pWorld, pBean->pruntime, PX_POINT((px_float)pBean->pruntime->surface_height / 6 + 125, (px_float)pBean->pruntime->surface_height / 8 + 25, pObject->z), 1));
 			}
 			break;
 		default:

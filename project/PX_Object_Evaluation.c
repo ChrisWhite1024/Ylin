@@ -20,7 +20,7 @@ px_void PX_Object_EvaluationRender(px_surface* psurface, PX_Object* pObject, px_
 }
 
 
-PX_Object* PX_Object_EvaluationCreate(PX_World* pWorld, PX_Runtime* pruntime, px_point point)
+PX_Object* PX_Object_EvaluationCreate(PX_World* pWorld, PX_Runtime* pruntime, px_point point, px_uint type)
 {
 	PX_Object_Evaluation desc;
 	PX_ParticalLauncher_InitializeInfo info;
@@ -28,7 +28,22 @@ PX_Object* PX_Object_EvaluationCreate(PX_World* pWorld, PX_Runtime* pruntime, px
 	PX_memset(&desc, 0, sizeof(desc));
 	desc.pWorld = pWorld;
 	desc.pruntime = pruntime;
-	desc.ptexture = PX_ResourceLibraryGetTexture(&pruntime->ResourceLibrary, "perfect");
+	
+	switch (type)
+	{
+	case 1:
+		desc.ptexture = PX_ResourceLibraryGetTexture(&pruntime->ResourceLibrary, "perfect");
+		break;
+	case 2:
+		desc.ptexture = PX_ResourceLibraryGetTexture(&pruntime->ResourceLibrary, "good");
+		break;
+	case 3:
+		desc.ptexture = PX_ResourceLibraryGetTexture(&pruntime->ResourceLibrary, "miss");
+		break;
+	default:
+		break;
+	}
+	
 	
 	PX_ParticalLauncherInitializeDefaultInfo(&info);
 	info.direction = PX_POINT(0, -1, 0);

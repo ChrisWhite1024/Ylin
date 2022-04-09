@@ -54,7 +54,11 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,px_int screen_width,px_int
 		return PX_FALSE;
 	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_EVALUATION_PERFECT, "perfect"))
 		return PX_FALSE;
-
+	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_EVALUATION_GOOD, "good"))
+		return PX_FALSE;
+	if (!PX_LoadTextureToResource(&pApp->runtime.ResourceLibrary, GAME_TEXTURE_PATH_EVALUATION_MISS, "miss"))
+		return PX_FALSE;
+	
 	PX_WorldInitialize(&pApp->runtime.mp_game, &pApp->world, pApp->runtime.surface_width, pApp->runtime.surface_height, pApp->runtime.surface_width, pApp->runtime.surface_height, 1024 * 1024 * 4);
 	
 	dragon = PX_Object_DragonCreate(&pApp->world, &pApp->runtime);

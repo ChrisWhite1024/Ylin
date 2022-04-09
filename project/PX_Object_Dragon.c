@@ -80,16 +80,10 @@ px_void PX_Object_DragonOnKeyDown(PX_Object* pObject, PX_Object_Event e, px_void
 	PX_Object_Dragon* pDesc = PX_ObjectGetDesc(PX_Object_Dragon,pObject);
 }
 
-px_void PX_Object_DragonOnImpact(PX_Object* pObject, PX_Object_Event e, px_void* ptr)
-{
-	//PX_Object *target=(PX_Object *)PX_Object_Event_GetDataPtr(e);
-	//PX_ObjectExecuteEvent(target,PX_OBJECT_BUILD_EVENT(PX_OBJECT_DRAGON_JUDGE));
-}
-
 px_void PX_Object_DragonOnCursorDown(PX_Object* pObject, PX_Object_Event e, px_void* ptr)
 {
 	PX_Object_Dragon* pDesc = PX_ObjectGetDesc(PX_Object_Dragon, pObject);
-	//PX_SoundPlayAdd(&pDesc->runtime->soundplay, PX_SoundCreate(&soundeffect, PX_FALSE));
+
 	pDesc->status = DRAGON_TOP_FLYKICK;
 	pDesc->AnimationElpased = 0;
 	pDesc->animationEffect = DRAGON_FLY_TO_SKY;
@@ -101,7 +95,7 @@ px_void PX_Object_DragonOnCursorDown(PX_Object* pObject, PX_Object_Event e, px_v
 px_void PX_Object_DragonOnCursorRDown(PX_Object* pObject, PX_Object_Event e, px_void* ptr)
 {
 	PX_Object_Dragon* pDesc = PX_ObjectGetDesc(PX_Object_Dragon, pObject);
-	//PX_SoundPlayAdd(&pDesc->runtime->soundplay, PX_SoundCreate(&soundeffect, PX_FALSE));
+
 	pDesc->status = DRAGON_BOTTOM_STRIKE;
 	pDesc->AnimationElpased = 0;
 	PX_AnimationSetCurrentPlayAnimationByName(&animationDragon, "strike");
@@ -128,7 +122,6 @@ PX_Object* PX_Object_DragonCreate(PX_World *pworld, PX_Runtime* runtime)
 
 
 	PX_ObjectRegisterEvent(pObject, PX_OBJECT_EVENT_KEYDOWN, PX_Object_DragonOnKeyDown,PX_NULL);
-	PX_ObjectRegisterEvent(pObject,PX_OBJECT_EVENT_IMPACT,PX_Object_DragonOnImpact,PX_NULL);
 	PX_ObjectRegisterEvent(pObject, PX_OBJECT_EVENT_CURSORDOWN, PX_Object_DragonOnCursorDown, PX_NULL);
 	PX_ObjectRegisterEvent(pObject, PX_OBJECT_EVENT_CURSORRDOWN, PX_Object_DragonOnCursorRDown, PX_NULL);
 
