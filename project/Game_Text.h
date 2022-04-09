@@ -2,7 +2,8 @@
 #define GAME_TEXT_H
 
 #define GAME_ANIMATIONLIBRARY_PATH_DRAGON "./res/animationlibrary/dragon.2dx"
-#define GAME_SOUND_PATH_LOAD "./res/music/vocal01.wav" 
+#define GAME_SOUND_PATH_LOAD "./res/music/INTERNET OVERDOSE/vocal01.wav" 
+#define GAME_MAP_PATH_LOAD "./res/music/INTERNET OVERDOSE/map.json" 
 #define GAME_TEXTURE_PATH_SKY "./res/background/night/traw/sky.traw"
 #define GAME_TEXTURE_PATH_CLOUD01 "./res/background/night/traw/cloud01.traw"
 #define GAME_TEXTURE_PATH_CLOUD02 "./res/background/night/traw/cloud02.traw"
