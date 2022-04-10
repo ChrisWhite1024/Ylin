@@ -3,13 +3,16 @@
 #include "PX_Object_Dragon.h"
 #include "PX_Object_Particallauncher.h"
 #include "PX_Object_Evaluation.h"
+#include "Game_Text.h"
 
 px_void PX_Object_BeanUpdate(PX_Object* pObject, px_dword elpased)
 {
 	PX_Object_Bean *pBean=PX_ObjectGetDesc(PX_Object_Bean,pObject);
 	PX_Object_Dragon* pDragon = PX_ObjectGetDesc(PX_Object_Dragon, dragon);
 
-	pObject->x -= elpased / 2.0f;
+	//pObject->x -= elpased / 2.0f;
+	pObject->x -= ((px_float)pBean->pruntime->surface_width / 6 * 5 - 85) * elpased / GAME_KEY_PRETIME;
+	
 	if (pBean->state==PX_OBJECT_BEAN_STATE_DEAD || pObject->x < 0 - pObject->diameter / 2)
 	{
 		pObject->diameter-=elpased * 2.f;

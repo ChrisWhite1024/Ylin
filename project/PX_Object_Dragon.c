@@ -88,7 +88,14 @@ px_void PX_Object_DragonOnCursorDown(PX_Object* pObject, PX_Object_Event e, px_v
 	pDesc->AnimationElpased = 0;
 	pDesc->animationEffect = DRAGON_FLY_TO_SKY;
 	PX_AnimationSetCurrentPlayAnimationByName(&animationDragon, "flyKick");
-
+	/*
+	px_dword hour, min, sec, msec;
+	hour = pDesc->time / 3600000;
+	min = (pDesc->time - hour * 3600000) / 60000;
+	sec = (pDesc->time - hour * 3600000 - min * 60000) / 1000;
+	msec = pDesc->time - hour * 3600000 - min * 60000 - sec * 1000;
+	printf("{\"keytype\":0,\"keytime\":[%d,%d,%d,%d]},\n", hour, min, sec, msec);
+	*/
 	PX_WorldPostEvent(pDesc->pWorld, PX_OBJECT_BUILD_EVENT(PX_OBJECT_DRAGON_JUDGE));
 }
 
@@ -99,7 +106,14 @@ px_void PX_Object_DragonOnCursorRDown(PX_Object* pObject, PX_Object_Event e, px_
 	pDesc->status = DRAGON_BOTTOM_STRIKE;
 	pDesc->AnimationElpased = 0;
 	PX_AnimationSetCurrentPlayAnimationByName(&animationDragon, "strike");
-
+	/*
+	px_dword hour, min, sec, msec;
+	hour = pDesc->time / 3600000;
+	min = (pDesc->time - hour * 3600000) / 60000;
+	sec = (pDesc->time - hour * 3600000 - min * 60000) / 1000;
+	msec = pDesc->time - hour * 3600000 - min * 60000 - sec * 1000;
+	printf("{\"keytype\":1,\"keytime\":[%d,%d,%d,%d]},\n", hour, min, sec, msec);
+	*/
 	PX_WorldPostEvent(pDesc->pWorld, PX_OBJECT_BUILD_EVENT(PX_OBJECT_DRAGON_JUDGE));
 }
 
@@ -119,7 +133,6 @@ PX_Object* PX_Object_DragonCreate(PX_World *pworld, PX_Runtime* runtime)
 	pObject->diameter = 100;
 	pObject->impact_object_type = 1;
 	pObject->impact_target_type = 2;
-
 
 	PX_ObjectRegisterEvent(pObject, PX_OBJECT_EVENT_KEYDOWN, PX_Object_DragonOnKeyDown,PX_NULL);
 	PX_ObjectRegisterEvent(pObject, PX_OBJECT_EVENT_CURSORDOWN, PX_Object_DragonOnCursorDown, PX_NULL);

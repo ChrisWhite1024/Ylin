@@ -5,6 +5,7 @@
 #include "PX_Object_JudgementCircle.h"
 #include "PX_Object_Ground.h"
 #include "PX_Object_Bean.h"
+#include "PX_Object_KeyManager.h"
 #include "PX_Object_Particallauncher.h"
 #include "Game_Text.h"
 
@@ -20,6 +21,8 @@ PX_Object* judgementcircleB;
 px_dword cloud_gen;
 px_point basepoint;
 PX_SoundData soundeffect;
+PX_Json_Value* keymap;
+px_int keynum;
 
 px_bool PX_ApplicationInitialize(PX_Application *pApp,px_int screen_width,px_int screen_height)
 {
@@ -78,7 +81,7 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,px_int screen_width,px_int
 	PX_WorldAddObject(&pApp->world, dragon);
 	PX_WorldAddObject(&pApp->world, PX_Object_GroundCreate(&pApp->world, &pApp->runtime, 1));
 	PX_WorldAddObject(&pApp->world, PX_Object_GroundCreate(&pApp->world, &pApp->runtime, 2));
-	
+	PX_WorldAddObject(&pApp->world, PX_Object_KeyManagerCreate(&pApp->world, &pApp->runtime));
 	
 	return PX_TRUE;
 }
@@ -101,8 +104,8 @@ px_void PX_ApplicationUpdate(PX_Application *pApp,px_dword elapsed)
 		{
 			cloud_gen = 100 + PX_rand() % 5000;
 			PX_WorldAddObject(&pApp->world, PX_Object_CloudCreate(&pApp->world, &pApp->runtime));
-			PX_WorldAddObject(&pApp->world, PX_Object_BeanCreate(&pApp->world, pApp->runtime.surface_width, pApp->runtime.surface_height / 8 + 65, 1, &pApp->runtime));
-			PX_WorldAddObject(&pApp->world, PX_Object_BeanCreate(&pApp->world, pApp->runtime.surface_width + 200, pApp->runtime.surface_height / 8 * 5 + 65, 2, &pApp->runtime));
+			//PX_WorldAddObject(&pApp->world, PX_Object_BeanCreate(&pApp->world, pApp->runtime.surface_width, pApp->runtime.surface_height / 8 + 65, 1, &pApp->runtime));
+			//PX_WorldAddObject(&pApp->world, PX_Object_BeanCreate(&pApp->world, pApp->runtime.surface_width + 200, pApp->runtime.surface_height / 8 * 5 + 65, 2, &pApp->runtime));
 		}
 		updateTime -= 20;
 	}

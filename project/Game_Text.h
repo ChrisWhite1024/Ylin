@@ -22,4 +22,6 @@
 
 #define PX_OBJECT_DRAGON_JUDGE 0x1001
 
+#define GAME_KEY_PRETIME 1000
+
 #endif // !GAME_TEXT_H

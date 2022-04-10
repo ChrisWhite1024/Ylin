@@ -27,6 +27,8 @@ extern PX_Animation animationDragon;
 extern PX_Object* dragon;
 extern PX_Object* background;
 extern PX_SoundData soundeffect;
+extern PX_Json_Value* keymap;
+extern px_int keynum;
 
 px_bool PX_ApplicationInitialize(PX_Application *App,px_int screen_Width,px_int screen_Height);
 px_void PX_ApplicationUpdate(PX_Application *App,px_dword elapsed);
